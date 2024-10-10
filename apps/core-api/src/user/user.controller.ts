@@ -11,9 +11,4 @@ export class UserController {
   async getIndex(): Promise<any> {
     return await this.userService.getAllUsers();
   }
-
-  @Post('/add-user')
-  async addUser(@Body() createUserDto: CreateUserDto): Promise<UserEntity> {
-    return this.userService.addUser(createUserDto);
-  }
 }
