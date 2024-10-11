@@ -22,6 +22,7 @@ export class AuthService {
     private userRepo: Repository<UserEntity>,
   ) {}
 
+  // User Sign-Up Service
   async signUp(createUserDto: CreateUserDto): Promise<UserEntity> {
     const existingUser = await this.userRepo.findOne({
       where: { email: createUserDto.email },
@@ -41,6 +42,7 @@ export class AuthService {
     return await this.userRepo.save(newUser);
   }
 
+  // User Sign-In Service
   async signIn(
     email: string,
     password: string,
