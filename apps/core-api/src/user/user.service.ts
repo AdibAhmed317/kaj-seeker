@@ -17,4 +17,8 @@ export class UserService {
     const userInfo = await this.userRepo.find();
     return userInfo.length > 0 ? userInfo : 'No data found';
   }
+
+  async findByEmail(email: string): Promise<UserEntity> {
+    return this.userRepo.findOne({ where: { email } });
+  }
 }
