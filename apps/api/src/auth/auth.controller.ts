@@ -12,6 +12,7 @@ export class AuthController {
     return this.authService.signUp(createUserDto);
   }
 
+  //this is sign in
   @Post('sign-in')
   async signIn(@Body() body: { email: string; password: string }) {
     return this.authService.signIn(body.email, body.password);
